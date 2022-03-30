@@ -17,7 +17,6 @@ variables:
   loadTestResourceGroup: 'rg_cicdloadtestgh'
   location: 'EAST US'
 
-
 stages:
 - stage: Build
   displayName: Build 
@@ -155,6 +154,13 @@ stages:
             "value": "$(webAppName).azurewebsites.net"
             }
           ]
-          
+        secrets: |
+          [
+            {
+            "name": "appToken",
+            "value": "$(mySecret)"
+            }
+          ]
+  
     - publish: $(System.DefaultWorkingDirectory)/loadTest
       artifact: results
