@@ -3,10 +3,3 @@ testName: SampleAppTest
 testPlan: SampleApp_Secrets.jmx
 description: 'SampleApp Test Run'
 engineInstances: 1
-secrets: |
-  [
-      {
-      "name": "appToken",
-      "value": "$(mySecret)"
-      }
-  ]
